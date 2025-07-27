@@ -1,39 +1,68 @@
-import { Heart } from 'lucide-react';
-import Link from 'next/link';
-import { Button } from './ui/button';
+import Link from "next/link"
 
 export const FooterComponent = () => (
-  <footer className="mt-16 border-t px-4 py-8 sm:px-6 lg:px-8">
+  <footer className="border-t bg-muted/30 px-4 py-16 sm:px-6 lg:px-8">
     <div className="container mx-auto">
-      <div className="text-center text-muted-foreground">
-        <p>&copy; {new Date().getFullYear()} The Blog. All rights reserved.</p>
-        <div className="mt-4 flex items-center justify-center gap-4">
-          <Link className="transition-colors hover:text-primary" href="#">
-            Privacy Policy
-          </Link>
-          <span className="text-muted-foreground/50">•</span>
-          <Link className="transition-colors hover:text-primary" href="#">
-            Terms of Service
-          </Link>
-          <span className="text-muted-foreground/50">•</span>
-          <Button asChild variant="outline">
-            <Link href={`${process.env.YAST_BLOG_API_URL}/sign-in`}>
-              Admin Login
-            </Link>
-          </Button>
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+        <div className="lg:col-span-2">
+          <img src="/placeholder.svg?height=32&width=120" alt="Kingpin" className="h-8 mb-4" />
+          <p className="text-muted-foreground max-w-md">
+            Global Distribution Powered by AI. For sales teams at brands, distributors and wholesalers.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="font-semibold mb-4">Product</h3>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            <li>
+              <Link href="#features" className="hover:text-foreground transition-colors">
+                Features
+              </Link>
+            </li>
+            <li>
+              <Link href="#integrations" className="hover:text-foreground transition-colors">
+                Integrations
+              </Link>
+            </li>
+            <li>
+              <Link href="#results" className="hover:text-foreground transition-colors">
+                Results
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="font-semibold mb-4">Company</h3>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            <li>
+              <Link
+                href="https://calendar.app.google/TkdECDD4D782dmGo9"
+                className="hover:text-foreground transition-colors"
+              >
+                Book Demo
+              </Link>
+            </li>
+            <li>
+              <Link href="https://portal.kingpin.global/login" className="hover:text-foreground transition-colors">
+                Login
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://portal.kingpin.global/register/choose-role"
+                className="hover:text-foreground transition-colors"
+              >
+                Sign Up
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
 
-      <div className="mt-4 flex justify-end">
-        <Link
-          className="flex items-center gap-1 text-muted-foreground transition-colors hover:text-primary"
-          href="https://withtab.blog"
-          target="_blank"
-        >
-          <Heart className="h-4 w-4 text-red-500" />
-          <span>Powered by Tab - The Automated Blog</span>
-        </Link>
+      <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
+        <p>&copy; {new Date().getFullYear()} Kingpin. All rights reserved.</p>
       </div>
     </div>
   </footer>
-);
+)
